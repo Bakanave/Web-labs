@@ -1,0 +1,46 @@
+.employee {
+    width: min-content;
+    display: inline-block;
+    text-align: center;
+    vertical-align:middle;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+.some_title{
+    text-align: center;
+    color:cornflowerblue;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow:1px 1px darkblue;
+}
+
+.useless_title {
+    margin-left:50px;
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;
+    color:cornflowerblue;
+}
+
+.some_text {
+    text-align: justify;
+    margin-left:20px;
+}
+
+.image {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align:middle;
+    color:rgb(41, 118, 157);
+    background-color: rgb(220, 235, 250);
+    border:solid;
+    padding: 5px;
+    margin-left: 175px;
+    margin-right: 175px;
+    text-decoration: none;
+}
