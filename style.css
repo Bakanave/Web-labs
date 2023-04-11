@@ -44,3 +44,11 @@
     margin-right: 175px;
     text-decoration: none;
 }
+
+.Footer {
+    margin-top:50px;
+    background-color: aquamarine;
+    height:40px;
+    border:solid;
+    border-color: lightgreen;
+}
