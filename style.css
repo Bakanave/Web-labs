@@ -2,28 +2,33 @@
     width: min-content;
     display: inline-block;
     text-align: center;
-    vertical-align:middle;
+    vertical-align: middle;
     margin: 10px;
     margin-bottom: 50px;
 }
 
-.some_title{
+.some_title {
     text-align: center;
-    color:cornflowerblue;
+    color: cornflowerblue;
     font-family: 'Courier New', Courier, monospace;
-    text-shadow:1px 1px darkblue;
+    text-shadow: 1px 1px darkblue;
 }
 
 .useless_title {
-    margin-left:50px;
+    margin-left: 50px;
     text-align: left;
-    font-family:'Courier New', Courier, monospace;
-    color:cornflowerblue;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: cornflowerblue;
 }
 
 .some_text {
     text-align: justify;
-    margin-left:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
 }
 
 .image {
@@ -35,20 +40,42 @@
 .button {
     display: inline-block;
     text-align: center;
-    vertical-align:middle;
-    color:rgb(41, 118, 157);
+    vertical-align: middle;
+    color: rgb(41, 118, 157);
     background-color: rgb(220, 235, 250);
-    border:solid;
+    border: solid;
     padding: 5px;
     margin-left: 175px;
     margin-right: 175px;
     text-decoration: none;
 }
 
+.navigation_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(41, 118, 157);
+    background-color: rgb(220, 235, 250);
+    border: solid;
+    padding: 5px;
+    text-decoration: none;
+    margin-bottom: -10px;
+}
+
 .Footer {
-    margin-top:50px;
-    background-color: aquamarine;
-    height:40px;
-    border:solid;
-    border-color: lightgreen;
+    text-align: center;
+    margin-top: 10px;
+    background-color: rgba(127, 255, 212, 0.204);
+    border: solid;
+    border-color: rgba(0, 255, 255, 0.326);
+
+}
+
+.footer_title {
+    margin-left: 10px;
+    margin-right:10px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    color: cornflowerblue;
+    display: inline-block;
 }
