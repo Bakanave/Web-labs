@@ -106,3 +106,23 @@
 .tabs a span.active {
     background-color: rgb(164, 203, 240);
 }
+
+.input_field {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 30px;
+    height: 25px;
+    width: 250px;
+    background-color: rgba(127, 255, 212, 0.204);
+}
+
+.input_button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(41, 118, 157);
+    background-color: rgb(220, 235, 250);
+    border: solid;
+    margin-left: 30px;
+    padding: 5px;
+    text-decoration: none;
+}
