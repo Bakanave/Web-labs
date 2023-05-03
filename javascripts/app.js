@@ -35,20 +35,19 @@ var main = function () {
             } else if ($element.parent().is(":nth-child(3)")) {
                 $(".content").append("<p>");
                 $(".content").append("<input>");
-				$(".content").append("<button>Добавить</button>");
-				$(".content input").addClass("input_field");
-				$(".content button").addClass("input_button");
-
-                $(".content").on("click", ".input_button", function() {
-                    if ($(".input_field").val() != "") {
-                        ordinaryEmployees.push($(".input_field").val());
-                        alert("Сотрудник был добавлен");
-                    }
-                });
+                $(".content").append("<button>Добавить</button>");
+                $(".content input").addClass("input_field");
+                $(".content button").addClass("input_button");
             }
             return false;
         })
         return false;
+    });
+    $(".content").on("click", ".input_button", function () {
+        if ($(".input_field").val() != "") {
+            ordinaryEmployees.push($(".input_field").val());
+            alert("Сотрудник был добавлен");
+        }
     });
     $(".tabs a:first-child span").trigger("click");
 };
