@@ -91,6 +91,8 @@ var main = function (employeesObjects) {
     $(".tabs a:first-child span").trigger("click");
 };
 
+
+
 $(document).ready(function () {
     $.ajaxSetup({ cache: false });
     $.getJSON("/employees", function (employeesObjects) {
