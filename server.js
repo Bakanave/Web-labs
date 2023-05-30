@@ -1,73 +1,47 @@
 var express = require("express"),
     http = require("http"),
-    app = express(),
-    employees = [
-        {
-            "name": "Галиев Ильфат Рамилович",
-            "tags": [
-                "Отдел дизайна",
-                "Главы отделов",
-                "Лучшие работники 2022 года",
-                "Лучшие работники 2023 года"
-            ]
-        },
-        {
-            "name": "Георгиев Дмитрий Сергеевич",
-            "tags": [
-                "Отдел разработки",
-                "Главы отделов"
-            ]
-        },
-        {
-            "name": "Секачев Герман Дмитриевич",
-            "tags": [
-                "Отдел аналитики",
-                "Главы отделов",
-                "Лучшие работники 2022 года"
-            ]
-        },
-        {
-            "name": "Ибрагимов Тимур Рафаэлевич",
-            "tags": [
-                "Отдел дизайна"
-            ]
-        },
-        {
-            "name": "Искандеров Адильхан Нариманович",
-            "tags": [
-                "Отдел дизайна"
-            ]
-        },
-        {
-            "name": "Ташлыков Даниил Владимирович",
-            "tags": [
-                "Отдел разработки"
-            ]
-        },
-        {
-            "name": "Миронов Игорь Евгеньевич",
-            "tags": [
-                "Отдел разработки",
-                "Лучшие работники 2023 года"
-            ]
-        },
-        {
-            "name": "Ямалтдинова Назиля Фанилевна",
-            "tags": [
-                "Отдел аналитики"
-            ]
-        }
-    ];
+    mongoose = require("mongoose")
+    app = express();
 
 app.use(express.static(__dirname + "/client"));
+app.use(express.urlencoded({ extended: true }));
+mongoose.connect('mongodb://0.0.0.0:27017/egnirc');
+
+var EmployeeSchema = mongoose.Schema({
+    name: String,
+    tags: [String]
+});
+var Employee = mongoose.model("Employee", EmployeeSchema);
 http.createServer(app).listen(3000);
-app.use(express.urlencoded({extended: true}));
+app.get("/employees", async (req, res) => {
+    await Employee.find()
+        .then(async (Employees) => {
+            res.json(Employees);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+});
 
-app.get("/employees", function(req, res) {
-    res.json(employees);
-})
+app.post("/employees", async (req, res) => {
+    console.log(req.body);
+    let newEmployee = new Employee({
+        "name": req.body.name,
+        "tags": req.body.tags
+    });
 
-app.post("/employees", function (req, res) {
-    var newEmployee = req.body;
-    employees.push(newEmployee);
+    await newEmployee.save()
+        .then(async (result) => {
+            await Employee.find()
+                .then(async (result) => {
+                    res.json(result);
+                })
+                .catch(async (err) => {
+                    res.send(err);
+                });
+        })
+        .catch(async (err) => {
+            console.log(err);
+            res.send("ERROR");
+        });
 });
